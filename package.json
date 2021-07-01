@@ -1,0 +1,22 @@
+{
+  "name": "scooter",
+  "version": "1.0.0",
+  "description": "MV scooter app with JavaScript, UML, diagrams, OOP",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jjliem/scooter.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jjliem/scooter/issues"
+  },
+  "homepage": "https://github.com/jjliem/scooter#readme",
+  "devDependencies": {
+    "jest": "^27.0.6"
+  }
+}
