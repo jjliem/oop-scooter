@@ -10,16 +10,19 @@ As a customer, I want to mark a scooter as broken by flagging it
 
 
 Class Diagram (Pseudo-OOP)
+
+class ScooterApp {
+    users: ARRAY
+    stations: ARRAY
+    addUser()
+}
+
 class Station {
-	
 	id: INTEGER
 	location: STRING
     scooters: ARRAY
-	authenticateUser()
 	addScooter()
 	removeScooter()
-	alertMaintence()
-	processPayment()
 }
 
 class Scooter {
@@ -27,21 +30,15 @@ class Scooter {
     location: STRING
     battery: INTEGER
     broken: BOOLEAN
-    inUse()
-}
+} 
 
 class User {
-
 	id : INTEGER
 	email : STRING
     password: STRING
-    paymentInfo: INTEGER
-    usingScooter: BOOLEAN
-    signUp()
-    signIn()
-	pay()
+	signUp()
 	rentScooter()
     returnScooter()
-    flagBrokenScooter()
+    flagBroken()
 }
 
