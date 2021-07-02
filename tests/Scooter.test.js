@@ -3,7 +3,7 @@ const Scooter = require('../src/Scooter')
 describe('Scooter object', ()  => {
     const testScooter1 = new Scooter()
     const testScooter2 = new Scooter()
-    
+
     test('Scooter has incrementing id', () => {
         expect(testScooter2.id).toBe(2)
     })
@@ -14,5 +14,9 @@ describe('Scooter object', ()  => {
 
     test('Scooter is not broken', () => {
         expect(testScooter1.isBroken).toBeFalsy
+    })
+
+    test('Scooter is available', () => {
+        expect(testScooter1.available).toBeTruthy
     })
 })

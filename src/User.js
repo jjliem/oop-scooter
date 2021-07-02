@@ -1,4 +1,4 @@
-const Station = require('../src/Station')
+const Station = require('./Station')
 
 class User {
 
@@ -10,12 +10,10 @@ class User {
         this.email = email
         this.password = password
         this.age = age
-        this.scooters = []
+        this.scooter = {}
     }
 
-    addScooter(station, scooter) {
-        this.scooters.push(scooter)
-    }
+    
 }
 
 module.exports = User

@@ -16,6 +16,15 @@ class Station {
     removeScooter(scooter) {
         this.scooters.pop(scooter)
     }
+
+    async charge(scooter) {
+        console.log('Starting charge');
+
+        await new Promise(resolve => setTimeout(resolve, 2000)); // wait 2 seconds
+        scooter.battery = 100;
+        
+        console.log('Charge complete');   
+   }
 }
 
 module.exports = Station

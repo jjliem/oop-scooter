@@ -23,4 +23,10 @@ describe('Station object', () => {
         testStation1.removeScooter(testScooter)
         expect(testStation1.scooters.length).toBe(0)
     })
+
+    test("charge", async () => {
+        await testStation1.charge(testScooter); // we need to wait for the charge!
+        console.log("Test complete");
+      });
+        
 })

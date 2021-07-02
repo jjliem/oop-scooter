@@ -17,15 +17,30 @@ describe('App object', () => {
         expect(testApp.stations.length).toBe(1)
     })
 
-    test('App adds user if >=18', () => {
-        testApp.addUser(testUser1)
+    test('App signs up user if >=18', () => {
+        testApp.signUp(testUser1)
         expect(testApp.users.length).toBe(1)
     })
 
     test('throws error if user if <18', () => {
         expect(() =>{
-            testApp.addUser(testUser2)
+            testApp.signUp(testUser2)
         }).toThrow()
     })
 
+    test('User rents Scooter from Station', () => {
+        testStation1.addScooter(testScooter1)
+        testStation1.addScooter(testScooter2)
+        testApp.rentScooter(testUser1, testStation1)
+        expect(testUser1.scooter).toStrictEqual(testScooter1)
+        expect(testStation1.scooters).toStrictEqual([testScooter2])
+    })
+
+    test('User returns Scooter to Station', () => {
+        testStation1.addScooter(testScooter1)
+        testApp.rentScooter(testUser1, testStation1)
+        testApp.returnScooter(testUser1, testStation2)
+        expect(testUser1.scooter).toStrictEqual({})
+        expect(testStation2.scooters).toStrictEqual([testScooter2])
+    })
 })

@@ -23,11 +23,4 @@ describe('User object', () => {
     test('User has incrementing id', () => {
         expect(testUser2.id).toBe(2)
     })
-
-    test('User rents scooter', () => {
-        testUser1.addScooter(testScooter)
-        expect(testUser1.scooters.length).toBe(1)
-    })
-
-    
 })

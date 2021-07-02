@@ -16,6 +16,8 @@ class ScooterApp {
     stations: ARRAY
     addUser()
     addStation()
+    rentScooter()
+    returnScooter
     //authorizeUser()
 }
 
@@ -23,23 +25,19 @@ class Station {
 	id: INTEGER
 	location: STRING
     scooters: ARRAY
-	addScooter()
-	removeScooter()
 }
 
 class Scooter {
     id: INTEGER
     battery: INTEGER
     broken: BOOLEAN
-    //inUse()
+    available: BOOLEAN
 } 
 
 class User {
 	id : INTEGER
 	email : STRING
     password: STRING
-	rentScooter()
-    returnScooter()
-    // flagBroken()
+    age: INTEGER
 }
 
