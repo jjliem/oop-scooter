@@ -11,21 +11,6 @@ class App {
         this.stations.push(station)
     }
 
-    isLegalAge(user) {
-        if (user.age >= 18) {
-            return true
-        }
-    }
-
-    signUp(user) {
-        let isLegalAge = this.isLegalAge(user)
-        if (isLegalAge) {
-            this.users.push(user)
-        } else {
-            throw new Error('User must be 18 or over to rent scooter')
-        }   
-    }
-
     rentScooter(user, station) {
         let firstAvailable = station.scooters.filter(scooter => scooter.available == true)[0]
         user.scooter = firstAvailable
@@ -42,6 +27,7 @@ class App {
         user.scooter.available = true
         station.scooters.push(user.scooter)
         user.scooter = {}
+        user.bill = 5.00
     }
 }
 

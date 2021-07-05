@@ -6,7 +6,7 @@ const Scooter = require('../src/Scooter')
 describe('App object', () => {
     const testApp = new App()
     const testUser1 = new User("jody@gmail.com", "123ABC", 18)
-    const testUser2 = new User("julie@gmail.com", "123ABC", 17)
+    const testUser2 = new User("julie@gmail.com", "123ABC", 18)
     const testStation1 = new Station('1st Street')
     const testStation2 = new Station('2nd Street')
     const testScooter1 = new Scooter()
@@ -15,17 +15,6 @@ describe('App object', () => {
     test('App adds station', () => {
         testApp.addStation(testStation1)
         expect(testApp.stations.length).toBe(1)
-    })
-
-    test('App signs up user if >=18', () => {
-        testApp.signUp(testUser1)
-        expect(testApp.users.length).toBe(1)
-    })
-
-    test('throws error if user if <18', () => {
-        expect(() =>{
-            testApp.signUp(testUser2)
-        }).toThrow()
     })
 
     test('User rents Scooter from Station', () => {

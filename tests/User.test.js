@@ -4,7 +4,6 @@ const Scooter = require('../src/Scooter')
 
 describe('User object', () => {
     const testUser1 = new User('jody@gmail.com', '123ABC', 18)
-    const testUser2 = new User('julie@gmail.com', '123ABC', 18)
     const testScooter = new Scooter()
     
 
@@ -21,6 +20,12 @@ describe('User object', () => {
     })
 
     test('User has incrementing id', () => {
-        expect(testUser2.id).toBe(2)
+        expect(testUser1.id).toBe(1)
+    })
+
+    test('throws error if user if <18', () => {
+        expect(() =>{
+            const testUser2 = new User('julie@gmail.com', '123ABC', 17)
+        }).toThrow()
     })
 })
