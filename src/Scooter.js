@@ -6,9 +6,10 @@ class Scooter {
     constructor(){
         this.id = ++Scooter.lastId
         this.battery = 100
-        this.isBroken = false
         this.available = true
+        this.broken = false
     }
+
 }
 
 module.exports = Scooter

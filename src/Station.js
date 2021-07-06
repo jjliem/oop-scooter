@@ -22,6 +22,7 @@ class Station {
 
         await new Promise(resolve => setTimeout(resolve, 2000)); // wait 2 seconds
         scooter.battery = 100;
+        scooter.available = true;
         
         console.log('Charge complete');   
    }

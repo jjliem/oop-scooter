@@ -11,25 +11,30 @@ describe('App object', () => {
     const testStation2 = new Station('2nd Street')
     const testScooter1 = new Scooter()
     const testScooter2 = new Scooter()
+    testApp.addStation(testStation1)
+    testApp.addStation(testStation2)
+    testStation1.addScooter(testScooter1)
+    testStation2.addScooter(testScooter2)
 
     test('App adds station', () => {
-        testApp.addStation(testStation1)
-        expect(testApp.stations.length).toBe(1)
+        expect(testApp.stations.length).toBe(2)
     })
 
     test('User rents Scooter from Station', () => {
-        testStation1.addScooter(testScooter1)
-        testStation1.addScooter(testScooter2)
         testApp.rentScooter(testUser1, testStation1)
         expect(testUser1.scooter).toStrictEqual(testScooter1)
-        expect(testStation1.scooters).toStrictEqual([testScooter2])
     })
 
     test('User returns Scooter to Station', () => {
-        testStation1.addScooter(testScooter1)
-        testApp.rentScooter(testUser1, testStation1)
-        testApp.returnScooter(testUser1, testStation2)
+        testApp.returnScooter(testUser1, testStation1)
         expect(testUser1.scooter).toStrictEqual({})
-        expect(testStation2.scooters).toStrictEqual([testScooter2])
+        expect(testStation1.scooters).toStrictEqual([testScooter1])
+    })
+
+    test('User flags Scooter as broken', () => {
+        testApp.rentScooter(testUser2, testStation2)
+        testApp.flagScooterAsBroken(testUser2, testStation2)
+        expect(testUser2.scooter).toStrictEqual({})
+        expect(testStation2.scooters[0].broken).toBe(true)
     })
 })

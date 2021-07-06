@@ -12,10 +12,6 @@ describe('Scooter object', ()  => {
         expect(testScooter1.battery).toBe(100)
     })
 
-    test('Scooter is not broken', () => {
-        expect(testScooter1.isBroken).toBeFalsy
-    })
-
     test('Scooter is available', () => {
         expect(testScooter1.available).toBeTruthy
     })
